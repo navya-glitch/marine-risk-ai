@@ -2,6 +2,8 @@
 
 **Agentic AI system for ocean marine insurance underwriting with <60 second turnaround**
 
+> 📂 **Want to see all the code?** Check out the [CODE_STRUCTURE.md](CODE_STRUCTURE.md) guide for a complete map of every file in this repository!
+
 ## 🎯 Business Problem
 
 Ships lose **$50,000+ per day** sitting in port waiting for insurance approval. Manual underwriting takes hours or days. This AI system provides comprehensive risk assessment in **under 60 seconds** with full transparency.
@@ -173,6 +175,8 @@ Overall Risk = (Regulatory × 15%) + (Reputation × 20%) + (Route × 30%) +
 - `Charts.jsx` - Recharts (Radar, Bar, Pie)
 - `Recommendations.jsx` - AI decision panel
 - `EventTab.jsx` - 5 sub-tabs (Timeline, Categories, Reasoning, Evidence, Trends)
+
+> 📖 **For a complete file-by-file guide**, see [CODE_STRUCTURE.md](CODE_STRUCTURE.md) - includes line counts, descriptions, and navigation tips!
 
 ## 🔧 Development
 
