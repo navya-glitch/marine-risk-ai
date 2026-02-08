@@ -1,7 +1,7 @@
-from typing import Dict, List, Any
+from typing import Dict, List, Any, Tuple
 import re
 
-def validate_imo_format(imo_number: str) -> tuple[bool, str]:
+def validate_imo_format(imo_number: str) -> Tuple[bool, str]:
     """
     Validate IMO number format (IMO + 7 digits)
     Returns (is_valid, message)

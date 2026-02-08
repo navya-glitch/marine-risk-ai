@@ -35,7 +35,7 @@ function Dashboard() {
       <header className="bg-brand-red-600 text-white py-6 shadow-lg">
         <div className="container mx-auto px-4">
           <h1 className="text-3xl font-bold">🚢 Agentic AI - 360° External Risk Insight</h1>
-          <p className="text-brand-red-100 mt-1">Ocean Marine Insurance Underwriting in &lt;60 seconds</p>
+          <p className="text-brand-red-100 mt-1">Ocean Marine Insurance Underwriting in {'<'}60 seconds</p>
         </div>
       </header>
 

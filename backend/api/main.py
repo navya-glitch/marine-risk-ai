@@ -2,6 +2,7 @@ from fastapi import FastAPI, WebSocket, WebSocketDisconnect, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 from typing import Optional
+from contextlib import asynccontextmanager
 import asyncio
 from datetime import datetime
 
@@ -11,11 +12,27 @@ from database.models import Application
 from database.mock_data import HISTORICAL_APPLICATIONS
 import config
 
+@asynccontextmanager
+async def lifespan(app: FastAPI):
+    """Lifespan context manager for startup/shutdown events"""
+    # Startup
+    try:
+        init_db()
+        print("✅ Database initialized successfully")
+    except Exception as e:
+        print(f"⚠️  Database initialization warning: {e}")
+    
+    yield
+    
+    # Shutdown (if needed)
+    pass
+
 # Initialize FastAPI app
 app = FastAPI(
     title="Marine Risk AI API",
     description="Agentic AI system for ocean marine insurance risk assessment",
-    version="1.0.0"
+    version="1.0.0",
+    lifespan=lifespan
 )
 
 # CORS middleware
@@ -42,16 +59,6 @@ class HealthResponse(BaseModel):
     timestamp: str
     ollama_connected: bool
     database_connected: bool
-
-# Initialize database on startup
-@app.on_event("startup")
-async def startup_event():
-    """Initialize database tables"""
-    try:
-        init_db()
-        print("✅ Database initialized successfully")
-    except Exception as e:
-        print(f"⚠️  Database initialization warning: {e}")
 
 @app.get("/")
 async def root():
