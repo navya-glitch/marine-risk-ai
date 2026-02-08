@@ -1,8 +1,9 @@
 from datetime import datetime
+from typing import Dict
 from tools.scrapers import scrape_weather_data
 from tools.calculators import calculate_weather_risk
 
-async def run_weather_analysis(departure: str, destination: str) -> dict:
+async def run_weather_analysis(departure: str, destination: str) -> Dict:
     """
     Analyze weather conditions for route
     Assess seasonal risks

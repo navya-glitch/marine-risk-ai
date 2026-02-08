@@ -1,9 +1,10 @@
 from datetime import datetime
+from typing import Dict
 from tools.scrapers import scrape_vessel_registry
 from tools.validators import cross_reference_vessel
 from tools.calculators import calculate_vessel_risk
 
-async def run_vessel_verification(user_data: dict, imo_number: str) -> dict:
+async def run_vessel_verification(user_data: Dict, imo_number: str) -> Dict:
     """
     Verify vessel details with registry
     Calculate vessel age risk

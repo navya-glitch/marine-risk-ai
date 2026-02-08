@@ -1,10 +1,11 @@
 from datetime import datetime
+from typing import Dict
 from tools.scrapers import scrape_maritime_news
 from tools.calculators import calculate_reputation_risk
 from database.models import Claim
 from database.connection import SessionLocal
 
-async def run_news_analysis(owner: str, vessel_name: str) -> dict:
+async def run_news_analysis(owner: str, vessel_name: str) -> Dict:
     """
     Scrape maritime news for owner/vessel
     Analyze sentiment

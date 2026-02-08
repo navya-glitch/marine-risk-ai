@@ -1,8 +1,9 @@
 from datetime import datetime
+from typing import Dict
 from tools.calculators import calculate_route_risk
 from database.mock_data import ROUTE_RISKS
 
-async def run_route_analysis(departure: str, destination: str) -> dict:
+async def run_route_analysis(departure: str, destination: str) -> Dict:
     """
     Analyze route for piracy and geopolitical risks
     Check high-risk maritime areas

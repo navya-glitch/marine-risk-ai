@@ -4,7 +4,7 @@ from database.mock_data import HISTORICAL_APPLICATIONS
 
 async def run_historical_analysis(cargo_type: str, vessel_age: int, 
                                  departure: str, destination: str,
-                                 risk_score: float) -> dict:
+                                 risk_score: float) -> Dict:
     """
     Analyze historical applications
     Find similar patterns

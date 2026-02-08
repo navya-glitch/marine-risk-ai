@@ -1,4 +1,5 @@
 from datetime import datetime
+from typing import Dict
 from tools.scrapers import scrape_sanctions
 from tools.validators import validate_sanctions
 
